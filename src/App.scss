@@ -1,0 +1,333 @@
+@use "@carbon/react";
+@use "@carbon/react/scss/reset";
+@use "@carbon/react/scss/theme";
+@use "@carbon/react/scss/colors";
+
+/* Default Light Mode */
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #ffffff;
+  color: #161616;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #161616;
+  color: #f4f4f4;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1; /* Pushes content upwards to prevent footer overlap */
+}
+
+
+/* ================== Navbar Styling ================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0f62fe;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Navbar Links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #bae6ff;
+}
+
+/* Navbar Button */
+.navbar button {
+  background: transparent;
+  border: 2px solid white;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.navbar button:hover {
+  background: white;
+  color: #0f62fe;
+}
+
+/* Light Mode Navbar */
+.light .navbar {
+  background: #ffffff;
+  color: #161616;
+}
+
+.light .navbar h1 {
+  color: #161616;
+}
+
+.light .navbar ul li a {
+  color: #161616;
+}
+
+.light .navbar button {
+  border: 2px solid #161616;
+  color: #161616;
+}
+
+.light .navbar button:hover {
+  background: #161616;
+  color: white;
+}
+
+/* Dark Mode Navbar */
+.dark .navbar {
+  background: #1c1c1c;
+  color: white;
+}
+
+.dark .navbar h1 {
+  color: white;
+}
+
+.dark .navbar ul li a {
+  color: white;
+}
+
+.dark .navbar button {
+  border: 2px solid white;
+  color: white;
+}
+
+.dark .navbar button:hover {
+  background: white;
+  color: black;
+}
+
+/* ================== Footer Styling ================== */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0f62fe;
+  color: white;
+  position: relative; /* Changed from fixed to relative */
+  width: 100%;
+  margin-top: 40px; /* Adds space between content and footer */
+}
+
+.dark .footer {
+  background-color: #1c1c1c;
+  color: white;
+}
+
+
+/* ================== Page Content Styling ================== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* ================== Home Page Styling ================== */
+.home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0f62fe;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Skills & Achievements Sections */
+.skills, .achievements {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+.skills h3, .achievements h3 {
+  color: #0f62fe;
+  font-size: 1.5rem;
+}
+
+.skills ul, .achievements ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills li, .achievements li {
+  padding: 5px 0;
+  font-size: 1.1rem;
+}
+
+/* Dark Mode Adjustments */
+.dark .skills, .dark .achievements {
+  background: #262626;
+  color: white;
+}
+
+/* Achievements Icons */
+.achievements li {
+  padding: 8px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.achievements li::before {
+  content: "✅";
+  margin-right: 10px;
+}
+
+/* ================== Resume Download Button ================== */
+.home-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.download-btn {
+  background-color: #0f62fe !important;
+  color: white !important;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+}
+
+/* ================== Certification Carousel ================== */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.carousel-container img {
+  width: 250px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Carousel */
+.swiper-container {
+  width: 100%;
+  height: 250px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.projects {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.dark .project-card {
+  background: #262626;
+  color: white;
+}
+
+.project-card h3 {
+  color: #0f62fe;
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.project-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
